@@ -1,0 +1,126 @@
+---
+// Navigation - industrial header with mobile menu and sticky behavior
+import Container from '@/components/Container.astro';
+import { SITE } from '@/config/site';
+
+export interface Props {
+  logo?: string;
+}
+
+const { logo = SITE.name } = Astro.props;
+---
+
+<header id="navbar" class="sticky top-0 z-40 bg-surface/95 backdrop-blur-lg border-b border-border transition-colors duration-200" data-ps="src/components/Navigation.astro:dt8k87">
+  <nav class="py-4" data-ps="src/components/Navigation.astro:m59h3b">
+    <Container class="flex justify-between items-center">
+      <a href="/" class="flex items-center gap-3 no-underline group" data-ps="src/components/Navigation.astro:kd8n5y">
+        <img
+          src="https://pagesmith-cdn.com/eb6c47c6/images/retina-size-logo-320.webp"
+          alt="9.0 SeismicCo"
+          class="h-9 sm:h-10 w-auto object-contain"
+          width="160"
+          height="40"
+          data-ps="src/components/Navigation.astro:i2om6d"
+        />
+      </a>
+
+      <div class="flex items-center gap-6" data-ps="src/components/Navigation.astro:gqvsdc">
+        <div class="hidden md:flex gap-7 items-center" data-ps="src/components/Navigation.astro:gqvsdd">
+          <a href="/#applications" class="text-sm font-semibold text-foreground hover:text-primary transition-colors no-underline" data-ps="src/components/Navigation.astro:7vkjsa">Applications</a>
+          <a href="/#products" class="text-sm font-semibold text-foreground hover:text-primary transition-colors no-underline" data-ps="src/components/Navigation.astro:7vkjsb">Products & Kits</a>
+          <a href="/#engineering" class="text-sm font-semibold text-foreground hover:text-primary transition-colors no-underline" data-ps="src/components/Navigation.astro:7vkjsc">Engineering</a>
+          <a href="/#about" class="text-sm font-semibold text-foreground hover:text-primary transition-colors no-underline" data-ps="src/components/Navigation.astro:7vkjsd">About</a>
+        </div>
+
+        <div class="hidden sm:flex items-center gap-3" data-ps="src/components/Navigation.astro:gqvsdd">
+          <a href="/#contact" class="inline-flex items-center justify-center px-4 py-2 text-sm font-bold bg-primary text-primary-foreground hover:bg-primary-hover transition-colors rounded-sm no-underline shadow-sm" data-ps="src/components/Navigation.astro:7vkjse">
+            Request Quote
+          </a>
+        </div>
+
+        <button
+          id="mobile-menu-button"
+          type="button"
+          class="md:hidden p-2 text-foreground hover:text-primary transition-colors focus:outline-none"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+         data-ps="src/components/Navigation.astro:5ds1">
+          <svg id="menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+    </Container>
+  </nav>
+
+  <div
+    id="mobile-menu"
+    class="hidden md:hidden overflow-hidden bg-surface border-t border-border"
+    role="navigation"
+    aria-label="Mobile navigation"
+   data-ps="src/components/Navigation.astro:gqvsde">
+    <nav class="flex flex-col py-4 px-6 gap-2" data-ps="src/components/Navigation.astro:m59h3a">
+      <a href="/#applications" class="text-foreground font-semibold py-2.5 no-underline hover:text-primary transition-colors" data-ps="src/components/Navigation.astro:7vkjsf">Applications</a>
+      <a href="/#products" class="text-foreground font-semibold py-2.5 no-underline hover:text-primary transition-colors" data-ps="src/components/Navigation.astro:kd8n5z">Products & Kits</a>
+      <a href="/#engineering" class="text-foreground font-semibold py-2.5 no-underline hover:text-primary transition-colors" data-ps="src/components/Navigation.astro:kd8n5y">Engineering & Compliance</a>
+      <a href="/#about" class="text-foreground font-semibold py-2.5 no-underline hover:text-primary transition-colors" data-ps="src/components/Navigation.astro:kd8n5x">About 9.0 SeismicCo</a>
+      <div class="pt-3 border-t border-border mt-2" data-ps="src/components/Navigation.astro:gqvsde">
+        <a href="/#contact" class="flex items-center justify-center w-full px-5 py-3 text-sm font-bold bg-primary text-primary-foreground hover:bg-primary-hover transition-colors rounded-sm no-underline text-center" data-ps="src/components/Navigation.astro:kd8n5w">
+          Request a Quote
+        </a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<script is:inline>
+  const navbar = document.getElementById('navbar');
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuIconOpen = document.getElementById('menu-icon-open');
+  const menuIconClose = document.getElementById('menu-icon-close');
+
+  function updateNavbar() {
+    if (window.scrollY > 40) {
+      navbar?.classList.add('shadow-md');
+    } else {
+      navbar?.classList.remove('shadow-md');
+    }
+  }
+  window.addEventListener('scroll', updateNavbar, { passive: true });
+  updateNavbar();
+
+  function toggleMenu() {
+    const isOpen = !mobileMenu?.classList.contains('hidden');
+    if (isOpen) {
+      mobileMenu?.classList.add('hidden');
+      menuIconOpen?.classList.remove('hidden');
+      menuIconClose?.classList.add('hidden');
+      mobileMenuButton?.setAttribute('aria-expanded', 'false');
+    } else {
+      mobileMenu?.classList.remove('hidden');
+      menuIconOpen?.classList.add('hidden');
+      menuIconClose?.classList.remove('hidden');
+      mobileMenuButton?.setAttribute('aria-expanded', 'true');
+    }
+  }
+
+  mobileMenuButton?.addEventListener('click', toggleMenu);
+  mobileMenu?.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu?.classList.add('hidden');
+      menuIconOpen?.classList.remove('hidden');
+      menuIconClose?.classList.add('hidden');
+      mobileMenuButton?.setAttribute('aria-expanded', 'false');
+    });
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !mobileMenu?.classList.contains('hidden')) {
+      toggleMenu();
+    }
+  });
+</script>

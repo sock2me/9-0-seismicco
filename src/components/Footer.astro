@@ -1,0 +1,73 @@
+---
+// Footer component - industrial structure and compliance note
+import Container from '@/components/Container.astro';
+import { SITE } from '@/config/site';
+
+export interface Props {
+  companyName?: string;
+  companyDescription?: string;
+  copyright?: string;
+}
+
+const {
+  companyName = SITE.name,
+  companyDescription = SITE.description,
+  copyright = `© ${new Date().getFullYear()} ${companyName}. All rights reserved.`
+} = Astro.props;
+---
+
+<footer class="bg-dark-background text-dark-foreground py-14 border-t border-dark-border" data-ps="src/components/Footer.astro:ikmf33">
+  <Container>
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-12" data-ps="src/components/Footer.astro:p4vf88">
+      <!-- Company Brand & Description -->
+      <div class="md:col-span-5" data-ps="src/components/Footer.astro:p4vf89">
+        <div class="flex items-center gap-2 mb-4" data-ps="src/components/Footer.astro:p4vf89">
+          <div class="p-1.5 bg-surface/95 rounded-sm inline-block" data-ps="src/components/Footer.astro:p4vf8b">
+            <img
+              src="https://pagesmith-cdn.com/eb6c47c6/images/retina-size-logo-320.webp"
+              alt="9.0 SeismicCo"
+              class="h-7 w-auto object-contain"
+              width="130"
+              height="32"
+              data-ps="src/components/Footer.astro:f0091f"
+            />
+          </div>
+        </div>
+        <p class="text-xs text-dark-muted-foreground leading-relaxed mb-4 max-w-sm" data-ps="src/components/Footer.astro:euol">{companyDescription}</p>
+        <p class="text-xs font-mono text-dark-muted-foreground" data-ps="src/components/Footer.astro:euoo">
+          Engineered Seismic Restraint Systems & Hardware Kits
+        </p>
+      </div>
+
+      <!-- Applications Links -->
+      <div class="md:col-span-3" data-ps="src/components/Footer.astro:p4vf8b">
+        <h3 class="text-xs font-bold uppercase tracking-wider text-dark-foreground mb-3" data-ps="src/components/Footer.astro:fh1w68">Facility Applications</h3>
+        <ul class="list-none p-0 m-0 flex flex-col gap-2 text-xs">
+          <li data-ps="src/components/Footer.astro:wyji6i"><a href="/#applications" class="text-dark-muted-foreground no-underline hover:text-dark-foreground transition-colors" data-ps="src/components/Footer.astro:7gqc0h">Acute Care Hospitals</a></li>
+          <li data-ps="src/components/Footer.astro:wyji6j"><a href="/#applications" class="text-dark-muted-foreground no-underline hover:text-dark-foreground transition-colors" data-ps="src/components/Footer.astro:7gqc0i">Laboratories & Cleanrooms</a></li>
+          <li data-ps="src/components/Footer.astro:wyji6k"><a href="/#applications" class="text-dark-muted-foreground no-underline hover:text-dark-foreground transition-colors" data-ps="src/components/Footer.astro:7gqc0j">Mechanical & Heavy MEP</a></li>
+          <li data-ps="src/components/Footer.astro:wyji6l"><a href="/#applications" class="text-dark-muted-foreground no-underline hover:text-dark-foreground transition-colors" data-ps="src/components/Footer.astro:7gqc0k">Architectural Storage & Racks</a></li>
+        </ul>
+      </div>
+
+      <!-- Quick Navigation -->
+      <div class="md:col-span-4" data-ps="src/components/Footer.astro:p4vf8a">
+        <h3 class="text-xs font-bold uppercase tracking-wider text-dark-foreground mb-3" data-ps="src/components/Footer.astro:f0091e">Navigation & Specs</h3>
+        <ul class="list-none p-0 m-0 flex flex-col gap-2 text-xs">
+          <li data-ps="src/components/Footer.astro:wyji6m"><a href="/" class="text-dark-muted-foreground no-underline hover:text-dark-foreground transition-colors" data-ps="src/components/Footer.astro:7gqc0l">Home</a></li>
+          <li data-ps="src/components/Footer.astro:wyji6n"><a href="/#products" class="text-dark-muted-foreground no-underline hover:text-dark-foreground transition-colors" data-ps="src/components/Footer.astro:7gqc0m">Pre-Manufactured Brackets</a></li>
+          <li data-ps="src/components/Footer.astro:wyji79"><a href="/#products" class="text-dark-muted-foreground no-underline hover:text-dark-foreground transition-colors" data-ps="src/components/Footer.astro:8o2pe">Rapid Deployment Kits</a></li>
+          <li data-ps="src/components/Footer.astro:wyji7a"><a href="/#engineering" class="text-dark-muted-foreground no-underline hover:text-dark-foreground transition-colors" data-ps="src/components/Footer.astro:8o2pf">ICC Code Compliance</a></li>
+          <li data-ps="src/components/Footer.astro:wyji7b"><a href="/#about" class="text-dark-muted-foreground no-underline hover:text-dark-foreground transition-colors" data-ps="src/components/Footer.astro:8o2pg">About 9.0 SeismicCo</a></li>
+          <li data-ps="src/components/Footer.astro:wyji7c"><a href="/#contact" class="text-dark-muted-foreground no-underline hover:text-dark-foreground transition-colors" data-ps="src/components/Footer.astro:8o2ph">Request a Quote</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Compliance Statement & Copyright -->
+    <div class="border-t border-dark-border pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-dark-muted-foreground" data-ps="src/components/Footer.astro:p4vf8b">
+      <p class="m-0" data-ps="src/components/Footer.astro:euom">{copyright}</p>
+      <p class="m-0 font-mono text-[11px]" data-ps="src/components/Footer.astro:euop">ICC Approved · IBC / ASCE 7 Standards Compliant</p>
+    </div>
+  </Container>
+</footer>

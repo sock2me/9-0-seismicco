@@ -1,0 +1,55 @@
+---
+import { SITE } from '@/config/site';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Hero from '@/components/home/Hero.astro';
+import Applications from '@/components/home/Applications.astro';
+import Products from '@/components/home/Products.astro';
+import Engineering from '@/components/home/Engineering.astro';
+import About from '@/components/home/About.astro';
+import ContactForm from '@/components/home/ContactForm.astro';
+---
+
+<BaseLayout
+  title={SITE.title}
+  description={SITE.description}
+  type="website"
+  jsonLd={[
+    {
+      '@context': 'https://schema.org',
+      '@type': 'Organization',
+      name: SITE.name,
+      url: new URL(Astro.url.pathname, SITE.url).toString(),
+      description: SITE.description,
+      sameAs: Object.values(SITE.socials),
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'WebSite',
+      name: SITE.name,
+      url: new URL(Astro.url.pathname, SITE.url).toString(),
+      potentialAction: {
+        '@type': 'SearchAction',
+        target: `${SITE.url}/#products`,
+        'query-input': 'required name=search_term_string',
+      },
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'Service',
+      name: 'Seismic Anchoring Brackets & Rapid Kits',
+      provider: {
+        '@type': 'Organization',
+        name: SITE.name,
+      },
+      serviceType: 'Structural & Mechanical Seismic Restraint Manufacturing',
+      areaServed: 'Worldwide',
+    }
+  ]}
+>
+  <Hero />
+  <Applications />
+  <Products />
+  <Engineering />
+  <About />
+  <ContactForm />
+</BaseLayout>

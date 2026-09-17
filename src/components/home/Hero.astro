@@ -1,0 +1,72 @@
+---
+// Hero component - Split composition with engineered load authority
+import Container from '@/components/Container.astro';
+---
+
+<section class="relative bg-background border-b border-border py-12 md:py-20 lg:py-24" data-ps="src/components/home/Hero.astro:c630g">
+  <Container>
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center" data-ps="src/components/home/Hero.astro:iy4tah">
+      <!-- 7/12 Desktop Text Track (60%+ Rule) -->
+      <div class="lg:col-span-7 flex flex-col items-start min-w-0" data-ps="src/components/home/Hero.astro:ecxgf3">
+        <h1 class="hero-animate text-h1 font-bold tracking-tight text-foreground mb-6 leading-tight" data-ps="src/components/home/Hero.astro:p3vdzl">
+          Engineered Seismic Brackets & Pre-Packaged Anchoring Kits
+        </h1>
+        
+        <p class="hero-animate hero-animate-delay-1 text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl leading-relaxed" data-ps="src/components/home/Hero.astro:6uykn0">
+          Pre-manufactured, ICC-approved seismic anchoring brackets and ready-to-deploy hardware kits engineered for hospitals, architects, structural engineers, and commercial builders.
+        </p>
+
+        <div class="hero-animate hero-animate-delay-2 flex flex-col sm:flex-row gap-4 w-full sm:w-auto mb-10" data-ps="src/components/home/Hero.astro:ecxgf4">
+          <a href="#contact" class="inline-flex items-center justify-center px-7 py-3.5 text-base font-bold bg-primary text-primary-foreground hover:bg-primary-hover transition-colors rounded-sm no-underline shadow-sm text-center" data-ps="src/components/home/Hero.astro:8zc20">
+            Request Kit Quote
+          </a>
+          <a href="#products" class="inline-flex items-center justify-center px-7 py-3.5 text-base font-bold bg-secondary text-secondary-foreground hover:bg-secondary-hover transition-colors rounded-sm no-underline text-center" data-ps="src/components/home/Hero.astro:8zc21">
+            Explore Hardware Catalog
+          </a>
+        </div>
+
+        <!-- Technical Specification Matrix Points -->
+        <div class="hero-animate hero-animate-delay-3 grid grid-cols-1 sm:grid-cols-3 gap-4 w-full pt-8 border-t border-border" data-ps="src/components/home/Hero.astro:ecxgf5">
+          <div class="flex flex-col border-l-2 border-primary pl-3" data-ps="src/components/home/Hero.astro:ecxgf6">
+            <span class="text-xs font-bold uppercase tracking-wider text-muted-foreground" data-ps="src/components/home/Hero.astro:z1i1xa">Standard</span>
+            <span class="text-sm font-bold text-foreground" data-ps="src/components/home/Hero.astro:z1i1wo">ICC Code Approved</span>
+          </div>
+          <div class="flex flex-col border-l-2 border-secondary pl-3" data-ps="src/components/home/Hero.astro:ecxgf7">
+            <span class="text-xs font-bold uppercase tracking-wider text-muted-foreground" data-ps="src/components/home/Hero.astro:z1i1wn">Deployment</span>
+            <span class="text-sm font-bold text-foreground" data-ps="src/components/home/Hero.astro:z1i1wm">Pre-Packaged Rapid Kits</span>
+          </div>
+          <div class="flex flex-col border-l-2 border-primary pl-3" data-ps="src/components/home/Hero.astro:ecxgf8">
+            <span class="text-xs font-bold uppercase tracking-wider text-muted-foreground" data-ps="src/components/home/Hero.astro:z1i1wl">Validation</span>
+            <span class="text-sm font-bold text-foreground" data-ps="src/components/home/Hero.astro:z1i1wk">Hospital & Lab Grade</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5/12 Contained Industrial Hardware Imagery -->
+      <div class="lg:col-span-5 w-full" data-ps="src/components/home/Hero.astro:ecxgf9">
+        <div class="relative bg-surface p-3 border border-border rounded-sm shadow-sm" data-ps="src/components/home/Hero.astro:ecxgfa">
+          <div class="relative aspect-[4/3] sm:aspect-[16/11] overflow-hidden bg-dark-background border border-border" data-ps="src/components/home/Hero.astro:ecxgfb">
+            <img
+              src="https://images.pexels.com/photos/8853524/pexels-photo-8853524.jpeg?auto=compress&cs=tinysrgb&w=1200"
+              srcset="https://images.pexels.com/photos/8853524/pexels-photo-8853524.jpeg?auto=compress&cs=tinysrgb&w=320 320w, https://images.pexels.com/photos/8853524/pexels-photo-8853524.jpeg?auto=compress&cs=tinysrgb&w=480 480w, https://images.pexels.com/photos/8853524/pexels-photo-8853524.jpeg?auto=compress&cs=tinysrgb&w=640 640w, https://images.pexels.com/photos/8853524/pexels-photo-8853524.jpeg?auto=compress&cs=tinysrgb&w=768 768w, https://images.pexels.com/photos/8853524/pexels-photo-8853524.jpeg?auto=compress&cs=tinysrgb&w=1024 1024w, https://images.pexels.com/photos/8853524/pexels-photo-8853524.jpeg?auto=compress&cs=tinysrgb&w=1280 1280w"
+              sizes="(max-width: 768px) 100vw, 50vw"
+              alt="Heavy seismic steel bracket mounting hardware"
+              class="w-full h-full object-cover"
+              loading="eager"
+              fetchpriority="high"
+              width="800"
+              height="550" data-ps="src/components/home/Hero.astro:gfvoz0" />
+          </div>
+          <div class="mt-3 flex items-center justify-between px-1" data-ps="src/components/home/Hero.astro:ecxgfc">
+            <p class="text-xs font-mono font-semibold text-muted-foreground uppercase tracking-wider" data-ps="src/components/home/Hero.astro:6uykmz">
+              Series 900 Heavy Bracing Assembly
+            </p>
+            <span class="inline-flex items-center text-xs font-bold text-primary" data-ps="src/components/home/Hero.astro:z1i1wj">
+              Field Tested
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </Container>
+</section>
